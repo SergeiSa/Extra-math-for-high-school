@@ -1,0 +1,877 @@
+\documentclass{beamer}
+
+\input{settings.tex}
+
+
+\title{Linear equations, matrices and vectors}
+\subtitle{Math and modelling for high school, Lecture 1}
+\author{by Sergei Savin}
+\centering
+\date{Fall 2022}
+
+
+
+\begin{document}
+\maketitle
+
+
+%\begin{frame}{Content}
+%
+%\begin{itemize}
+%\item Motivation
+%\item Ordinary differential equations
+%    \begin{itemize}
+%    \item 1st order
+%    \item n-th order
+%    \end{itemize}
+%\item Linear differential equations
+%    \begin{itemize}
+%    \item 1st order
+%    \item n-th order
+%    \end{itemize}
+%\item Changing n-th order ODE to a State-Space form
+%\item State-Space to ODE
+%\item Read more
+%\end{itemize}
+%
+%\end{frame}
+
+
+
+\begin{frame}{What is this course about?}
+% \framesubtitle{O}
+\begin{flushleft}
+
+In this course we try to do the following:
+
+\begin{itemize}
+	\item Teach you basics of university-level linear algebra, basic introduction to calculus and differential equations and simulation;
+	\item Focus on visual aspect of math: computer graphics, graphs, animation. We do it to use your strength - programming, to help you understand inherently abstract concepts. 
+	\item We try to keep the topics coherent and compact, avoiding topics that require deeper algebraic or calculus theory, which forces us to skip many interesting things - which you will surely learn in the university.
+\end{itemize}
+
+\end{flushleft}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Recap: Matrices}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		The following is a 3 by 3 matrix:
+		
+		\begin{equation}
+			\bo{A} =
+			\begin{bmatrix}
+			a_{11} & a_{12} & a_{13} \\
+			a_{21} & a_{22} & a_{23} \\
+			a_{31} & a_{32} & a_{33}
+			\end{bmatrix}
+		\end{equation}
+		
+		\bigskip
+		Examples of 3 by 3 matrices:
+		
+		\begin{equation}
+			\bo{A} =
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				2 & 6 & -5 \\
+				0 & -3 & 3
+			\end{bmatrix},
+		\ \ 
+		\bo{A} =
+		\begin{bmatrix}
+			10 & 2 & 0 \\
+			-4 & 5 & 0 \\
+			-4 & 5 & 2
+		\end{bmatrix},  \ \ \text{etc}
+		\end{equation}
+	
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Recap: Vectors}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		The following is a 3-dimensional vector:
+		
+		\begin{equation}
+			\bo{v} =
+			\begin{bmatrix}
+				v_{1}  \\
+				v_{2}  \\
+				v_{3}
+			\end{bmatrix}
+		\end{equation}
+		
+		\bigskip
+		Examples 3-dimensional vectors:
+		
+		\begin{equation}
+			\bo{v} =
+			\begin{bmatrix}
+				5 \\
+				5 \\
+				0
+			\end{bmatrix},
+			\ \ 
+			\bo{v} =
+			\begin{bmatrix}
+				4 \\
+				-3 \\
+				-1
+			\end{bmatrix},  \ \ \text{etc}
+		\end{equation}
+		
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Recap: Norms}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Given a vector: 
+			$\bo{v} =
+			\begin{bmatrix}
+				v_{1}  \\
+				v_{2}  \\
+				v_{3}
+			\end{bmatrix}$, we can find its \emph{norm}:
+		
+		\bigskip
+		
+		\begin{equation}
+			||\bo{v}|| =
+			\sqrt{v_{1}^2 + v_{2}^2+ v_{3}^2}
+		\end{equation}
+	
+	\bigskip
+	
+	You can think of it as \emph{length} of a vector.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Recap: Matrix-vector product}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		We can find matrix-vector product:
+		
+		\begin{equation}
+			\begin{bmatrix}
+				a_{11} & a_{12} & a_{13} \\
+				a_{21} & a_{22} & a_{23} \\
+				a_{31} & a_{32} & a_{33}
+			\end{bmatrix}
+			\begin{bmatrix}
+				v_{1}  \\
+				v_{2}  \\
+				v_{3}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				a_{11} v_{1} + a_{12} v_{2} + a_{13}v_{3} \\
+				a_{21} v_{1} + a_{22} v_{2} + a_{23}v_{3} \\
+				a_{31} v_{1} + a_{32} v_{2} + a_{33}v_{3}
+			\end{bmatrix}
+		\end{equation}
+	
+		\bigskip
+		
+		An example of a matrix-vector product:
+		
+		\begin{equation}
+			\begin{bmatrix}
+				1 & 0 & 0 \\
+				2 & 6 & -5 \\
+				0 & -3 & 3
+			\end{bmatrix}
+			\begin{bmatrix}
+				1  \\
+				-2  \\
+				0
+			\end{bmatrix} =
+			\begin{bmatrix}
+				1 \\
+				-10 \\
+				6
+			\end{bmatrix}
+		\end{equation}
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Matrices and vectors - recap}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Matrices don't need to be square. For the matrix-vector product to work, the matrix needs to have as many columns as there are elements in the vector. 
+		
+		\begin{equation}
+			\begin{bmatrix}
+				a_{11} & a_{12} & a_{13} \\
+				a_{21} & a_{22} & a_{23} 
+			\end{bmatrix}
+			\begin{bmatrix}
+				v_{1}  \\
+				v_{2}  \\
+				v_{3}
+			\end{bmatrix} =
+			\begin{bmatrix}
+				a_{11} v_{1} + a_{12} v_{2} + a_{13}v_{3} \\
+				a_{21} v_{1} + a_{22} v_{2} + a_{23}v_{3} 
+			\end{bmatrix}
+		\end{equation}
+		
+		\bigskip
+		
+		An example of a matrix-vector product:
+		
+		\begin{equation}
+			\begin{bmatrix}
+				2 & 2 & -1 \\
+				0 & 5 & 7 
+			\end{bmatrix}
+			\begin{bmatrix}
+				0  \\
+				2  \\
+				-2
+			\end{bmatrix} =
+			\begin{bmatrix}
+				6 \\
+				-4
+			\end{bmatrix}
+		\end{equation}
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Read more}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		There are many resources on the topic:
+		
+\begin{itemize}
+	\item \bref{https://mathinsight.org/matrix_introduction}{mathinsight.org/matrix\_introduction}
+	
+	\item \bref{https://mathinsight.org/matrix_vector_multiplication}{mathinsight.org/matrix\_vector\_multiplication}
+	
+	\item \bref{https://mathworld.wolfram.com/L2-Norm.html}{mathworld.wolfram.com/L2-Norm.html}
+	
+	\item etc.
+\end{itemize}		
+		
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Matrices and vectors in Python}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		In Python we can use Numpy package to create matrices and vectors:
+		
+\begin{itemize}
+	\item matrix: \texttt{A = np.array([[1, -4, 5], [3, 1, -2], [2, -6, -9]])}
+	
+	\item vector: \texttt{v = np.array([1, 1, -2])}
+	
+\end{itemize}		
+
+\bigskip
+	
+	Matrix-vector product is done as \texttt{y = A@v}.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Systems of linear equations}
+% \framesubtitle{Part 1}
+\begin{flushleft}
+
+Consider the system of equations:
+
+\begin{equation}
+	\begin{cases}
+		x_1   + 2 x_2 = 10 \\
+		2 x_1 + 2 x_2 = 0 
+	\end{cases}
+\end{equation}
+
+This is the same as:
+
+\begin{equation}
+	\begin{bmatrix}
+		1   & 2  \\
+		2   & 2  
+	\end{bmatrix}
+	\begin{bmatrix}
+		x_1  \\
+		x_2 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		10  \\
+		0 
+	\end{bmatrix}
+\end{equation}
+
+\bigskip
+
+General form for this kind of problem is:
+
+
+\begin{equation}
+	\mathbf{A} \mathbf{x} = \mathbf{b}
+\end{equation}
+
+%In this course we will solve it with $\texttt{x = np.linalg.solve(A, b)}$ fucntionality of numpy. 
+
+
+\end{flushleft}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]{Systems of linear equations}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		In this course we will solve it with $\texttt{x = np.linalg.solve(A, b)}$ functionality of numpy:
+		
+		\bigskip
+		
+		\begin{lstlisting}[language=Python]
+			import numpy as np
+			A = np.array([[1, 2], [2, 2]])
+			b = np.array([10, 0])
+			x = np.linalg.solve(A, b)
+			print("solution:")
+			print(x)
+			print("residual:")
+			print(A@x - b)
+		\end{lstlisting}
+		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Systems of linear equations: Other dimensions}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Dimensions do not matter, we can deal with equations with 2, 3 and more variables the same way:
+		
+		\begin{equation}
+			\begin{cases}
+				x_1   - 4 x_2 + 5 x_3= 1 \\
+				3 x_1 +   x_2 - 2 x_3= 1 \\ 
+				2 x_1 - 6 x_2 - 9 x_3= -2 
+			\end{cases}
+		\end{equation}
+		
+		This is the same as
+		
+		\begin{equation}
+			\begin{bmatrix}
+				1   & -4 &  5  \\
+				3   &  1 & -2  \\  
+				2   & -6 & -9   
+			\end{bmatrix}
+			\begin{bmatrix}
+				x_1  \\
+				x_2  \\
+				x_3 
+			\end{bmatrix}
+			=
+			\begin{bmatrix}
+				1  \\
+				1   \\
+				-2 
+			\end{bmatrix}
+		\end{equation}
+		
+		Again, it is $\mathbf{A} \mathbf{x} = \mathbf{b}$ and we solve it with $\texttt{x = np.linalg.solve(A, b)}$. 
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Dimensions: notation}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		When we want to note the dimension of a vector, we use the following notation:
+		
+		\begin{equation}
+			\mathbf{b} \in \mathbb{R}^n
+		\end{equation}
+		
+		where $\mathbb{R}$ means space of real numbers and $n$ is the dimensions.
+		
+		\bigskip
+		
+		For matrices it is similar:
+		
+		\begin{equation}
+			\mathbf{A} \in \mathbb{R}^{n, n}
+		\end{equation}
+		
+		Why use this strange $\mathbb{R}$? Because later you might see something like $\mathbf{b} \in \mathbb{C}^n$, meaning it is a complex vector, or $\mathbf{b} \in \mathbb{N}^n$ meaning it is a vector of integers. 
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Degenerate eqs.: too many variables}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+	
+Let us solve a degenerate system of equations:
+
+\begin{equation}
+	x_1   + 2 x_2 = 10
+\end{equation}
+
+This is the same as
+
+\begin{equation}
+	\begin{bmatrix}
+		1   & 2
+	\end{bmatrix}
+	\begin{bmatrix}
+		x_1  \\
+		x_2 
+	\end{bmatrix}
+	=
+	10
+\end{equation}
+
+General form for this kind of problem is still:
+
+\begin{equation}
+	\mathbf{A} \mathbf{x} = \mathbf{b}
+\end{equation}
+
+We can solve it with \texttt{x, \_, \_, \_ = np.linalg.lstsq(A, b, rcond=None)} fucntionality of numpy. 		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Degenerate eqs.: too many variables}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		But what does it even mean to solve $x_1   + 2 x_2 = 10$? Let us try to solve it by hand.
+		
+		\bigskip
+		
+		We know that $x_1  =10 -  2 x_2$. And we can pick any $x_2$. For example, $x_2 = 1$, then $x_1  =10 -  2 = 8$. Or, $x_2 = 0$, then $x_1  =10$. Or, $x_2 = 4$, then $x_1  =10 - 8 = 2$. So, all the following $\bo{x}$ are solutions:
+		
+		\begin{equation}
+	\bo{x} =
+	\begin{bmatrix}
+		8 \\
+		1
+	\end{bmatrix},
+	\ \ 
+	\bo{x} =
+	\begin{bmatrix}
+		10 \\
+		0
+	\end{bmatrix},
+\ \ 
+	\bo{x} =
+	\begin{bmatrix}
+	2 \\
+	4
+	\end{bmatrix}.
+\end{equation}		
+		
+The numpy function \texttt{lstsq} will pick \emph{smallest norm solution} out of all possible ones. In this case, it is, $\bo{x} =
+\begin{bmatrix}
+	2 \\
+	4
+\end{bmatrix}$.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Too many equations}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+
+Let us solve a degenerate system of equations:
+
+\begin{equation}
+	\begin{cases}
+		x_1   + 2 x_2 = 2 \\
+		3 x_1   - 5 x_2 = 0  \\
+		2 x_1   - 4 x_2 = 5
+	\end{cases}
+\end{equation}
+
+This is the same as
+
+\begin{equation}
+	\begin{bmatrix}
+		1   &  2 \\
+		3   & -5 \\ 
+		2   & -4
+	\end{bmatrix}
+	\begin{bmatrix}
+		x_1  \\
+		x_2 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		2 \\ 0 \\ 5
+	\end{bmatrix}
+\end{equation}
+
+General form for this kind of problem is still:
+
+\begin{equation}
+	\mathbf{A} \mathbf{x} = \mathbf{b}
+\end{equation}
+
+Again, we just use \texttt{x, \_, \_, \_ = np.linalg.lstsq(A, b, rcond=None)}. 		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]{Degenerate system of equations}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+\begin{lstlisting}[language=Python]
+A = np.array([[1, 2], [3, -5], [2, -4]])
+b = np.array([[2], [0], [5]])
+x, _, _, _ = np.linalg.lstsq(A, b, rcond=None)
+e = A@x - b;
+print("solution: " + str(x.T));
+print("residual: " + str(e.T));
+\end{lstlisting}		
+%
+The output for this example is:		
+%
+\begin{lstlisting}[language=Python]
+solution: [[1.07936508 0.14814815]]
+residual: [[-0.62433862  2.4973545  -3.43386243]]
+\end{lstlisting}			
+%
+Notice the residual is \textbf{not zero}. Note that the function \texttt{lstsq} will pick solution with \emph{smallest-norm residual}.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Degenerate square system}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+
+The following system is square (same number of variable and equations) but you still cannot solve it normally:
+
+\begin{equation}
+	\begin{cases}
+		x_1   - 2 x_2 = 0 \\
+		3 x_1   - 6 x_2 = 2 
+	\end{cases}
+\end{equation}
+
+This is the same as:
+
+\begin{equation}
+	\begin{bmatrix}
+		1   & -2 \\
+		3   & -6 
+	\end{bmatrix}
+	\begin{bmatrix}
+		x_1  \\
+		x_2 
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		0 \\ 2
+	\end{bmatrix}
+\end{equation}
+
+And it does not have a zero-residual solution.		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{How do you tell if a system can be solved?}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		The test is - to find if the matrix \textit{determinant} is not zero. 	
+		For 2 by 2 matrices, the determinant is found as follows:
+		
+		\begin{equation}
+			\mathbf A =
+			\begin{bmatrix}
+				a   & b  \\
+				c   & d  
+			\end{bmatrix}
+		\end{equation}
+		
+		\begin{equation}
+			\text{det} (\mathbf A) =
+			ad - bc
+		\end{equation}
+		
+		\bigskip
+		
+		For anything other than 2 by 2 we find determinant as $\texttt{d = np.linalg.det(A)}$ fucntionality of numpy. 
+		
+		\bigskip
+		
+		If a matrix has 0 determinant we call it \textit{degenerate}. If the matrix has non-zero determinant, we call it \textit{full-rank}.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Linear combination}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+	Given a few vectors $\mathbf v_1$, $\mathbf v_2$, ..., $\mathbf v_n \in \mathbb{R}^n$, their linear combination is defined as:
+	
+	\begin{equation}
+		\mathbf w = \alpha_1 \mathbf v_1 + \alpha_2 \mathbf v_2 + ... + \alpha_n \mathbf v_n
+	\end{equation}
+	
+	where $\alpha_i \in \mathbb{R}$ are linear coefficients.
+	
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Linear combination}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Example: Given $\mathbf v_1$ and $\mathbf v_2$:
+		
+		\begin{equation}
+			\mathbf v_1 = 
+			\begin{bmatrix} 
+				1 \\ 3
+			\end{bmatrix}, \ \ 
+			\mathbf v_2 = 
+			\begin{bmatrix} 
+				0 \\ 1
+			\end{bmatrix}
+		\end{equation}
+		
+		Then examples of their linear combinations are:
+		
+		\begin{equation}
+			\mathbf w = 2 \mathbf v_1 - \mathbf v_2 = 
+			2
+			\begin{bmatrix} 
+				1 \\ 3
+			\end{bmatrix}
+			-
+			\begin{bmatrix} 
+				0 \\ 1
+			\end{bmatrix}
+			=
+			\begin{bmatrix} 
+				2 \\ 5
+			\end{bmatrix}
+		\end{equation}
+		
+		\begin{equation}
+			\mathbf w = - 3\mathbf v_1 + 2\mathbf v_2 = 
+			-3
+			\begin{bmatrix} 
+				1 \\ 3
+			\end{bmatrix}
+			+2
+			\begin{bmatrix} 
+				0 \\ 1
+			\end{bmatrix}
+			=
+			\begin{bmatrix} 
+				-3 \\ -7
+			\end{bmatrix}
+		\end{equation}
+		
+		
+		\begin{equation}
+			\mathbf w = 5\mathbf v_2 = 
+			5
+			\begin{bmatrix} 
+				0 \\ 1
+			\end{bmatrix}
+			=
+			\begin{bmatrix} 
+				0 \\ 5
+			\end{bmatrix}
+		\end{equation}
+		
+		If a set of vectors contain none that is a linear combination of the others - we call them \textit{linearly independant}.	
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Linear combination and degenerate matrix}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+	
+	If one of your matrix's columns is a linear combination of the other - it will be degenerate. Lets look for an example. Consider the matrix:
+	
+	\begin{equation}
+		\mathbf A =
+		\begin{bmatrix}
+			a_{11}   & a_{12}   \\
+			a_{21}   & a_{22}   
+		\end{bmatrix}
+	\end{equation}
+	
+	Its columns are $\mathbf a_1$ and $\mathbf a_2$:
+	
+	\begin{equation}
+		\mathbf a_1 =
+		\begin{bmatrix}
+			a_{11}      \\
+			a_{21}     
+		\end{bmatrix}, \ \ 
+		\mathbf a_2 =
+		\begin{bmatrix}
+			a_{21}      \\
+			a_{22}     
+		\end{bmatrix}
+	\end{equation}
+	
+	If, for instance, $\mathbf a_2 = 2 \mathbf a_1$, the matrix $\mathbf A$ will be degenerate.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Linear combination and degenerate matrix}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+An example of a matrix with linearly dependent columns:
+		
+		\begin{equation}
+			\mathbf a_1 =
+			\begin{bmatrix}
+				2      \\
+				-3     
+			\end{bmatrix}, 
+		\ \ 
+		\mathbf a_2 = -\mathbf a_1 =
+		\begin{bmatrix}
+			-2      \\
+			3     
+		\end{bmatrix}
+		\end{equation}
+		
+		
+		Then matrix $\mathbf A =
+		\begin{bmatrix}
+			2    & -2   \\
+			-3   & 3   
+		\end{bmatrix}$ is degenerate, and $\text{det} (\mathbf A) = 0$. Meaning, you can't solve a system like this one:
+		
+		
+		\begin{equation}
+			\begin{cases}
+				2 x_1   - 2 x_2 = 1 \\
+				-3 x_1   + 3 x_2 = 0 
+			\end{cases}
+		\end{equation}
+		
+		Really though? Let us check. $-3 x_1   + 3 x_2 = 0$, therefore $x_1 = x_2$, and since $ 2 x_1   - 2 x_2 = 1$ we get $ 2 x_1   - 2 x_1 = 1$ and so $ 0 = 1$, which is clearly incorrect.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Read more}
+
+\begin{itemize}
+\item \bref{https://mathinsight.org/matrices_determinants_multivariable_calculus}{mathinsight.org/matrices\_determinants}
+
+\item \bref{https://en.wikipedia.org/wiki/Determinant}{en.wikipedia.org/wiki/Determinant}
+
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Thank you!}
+\centerline{Lecture slides are available via Moodle.}
+\bigskip
+\centerline{You can help improve these slides at:}
+\centerline{\mygit}
+\bigskip
+\centerline{Check Moodle for additional links, videos, textbook suggestions.}
+\bigskip
+
+\centerline{\textcolor{black}{\qrcode[height=1.6in]{https://github.com/SergeiSa/Control-Theory-Slides-Spring-2022}}}
+
+\end{frame}
+
+\end{document}
