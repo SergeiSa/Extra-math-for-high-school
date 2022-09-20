@@ -4,12 +4,12 @@ This repository contains regularly updated course materials. You can use lecture
 
 # Lecture slides
 
-* Lecture 1 - https://github.com/SergeiSa/Control-Theory-Slides-Spring-2022/tree/main/Slides/Introduction
+* Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/BasicsMatricesVectors
 
 
 # Practice sessions with Colab
 
-* Practice 1 (State Space) - https://github.com/SergeiSa/Control-Theory-Slides-Spring-2022/blob/main/Practice/Practice_1_ODE_to_StateSpace.ipynb
+* Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/Vectors_Matrices_Norms_LinSystems_Determinants.ipynb
 
 
 # For contributors
@@ -21,10 +21,3 @@ The changes in lecture slides are going through an automated check.
 The PDFs are compiled and updated automatically when PR is merged (thanks to k1rill-fedoseev from the 2020 Linear Control class!). You don't need to update them manually. They are also uploaded as workflow artifacts for every new commit pushed into this repository. You can use them to see your changes.
  
 Consider adding \*.pdf to the .git/info/exclude file on your local repo. Here is the ~~overy long but helpful~~ [description why it works](https://medium.com/@dave_lunny/exclude-files-from-git-without-committing-changes-to-gitignore-986fa712e78d)
-
-# Book suggestions
-
-
-## Lecture 1. Vectors, Norms, Matrices, Linear systems, Determinants, Linear independence
-
-
