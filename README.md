@@ -4,12 +4,14 @@ This repository contains regularly updated course materials. You can use lecture
 
 # Lecture slides
 
-* Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/BasicsMatricesVectors
+* Lecture 1. Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/BasicsMatricesVectors
+* Lecture 2. 2D algebra, dot product, plots, orthogonality - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorAlgebra2D
 
 
 # Practice sessions with Colab
 
-* Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/Vectors_Matrices_Norms_LinSystems_Determinants.ipynb
+* Seminar 1. Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/Vectors_Matrices_Norms_LinSystems_Determinants.ipynb
+* Seminar 2. 2D algebra, dot product, plots, orthogonality - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/2D_vectors_and_lines.ipynb
 
 
 # For contributors
