@@ -23,11 +23,11 @@ jobs:
           root_file: main.tex
           working_directory: Slides/BasicsMatricesVectors/
 
-      - name: Compile LaTeX document 2D_vectors_and_lines
+      - name: Compile LaTeX document VectorAlgebra2D
         uses: xu-cheng/latex-action@master
         with:
           root_file: main.tex
-          working_directory: Slides/2D_vectors_and_lines/
+          working_directory: Slides/VectorAlgebra2D/
 
 
 
@@ -38,11 +38,11 @@ jobs:
           name: BasicsMatricesVectors.pdf
           path: Slides/BasicsMatricesVectors/main.pdf
           
-      - name: Save 2D_vectors_and_lines artifact
+      - name: Save VectorAlgebra2D artifact
         uses: actions/upload-artifact@v1
         with:
-          name: 2D_vectors_and_lines.pdf
-          path: Slides/2D_vectors_and_lines/main.pdf
+          name: VectorAlgebra2D.pdf
+          path: Slides/VectorAlgebra2D/main.pdf
 
 
 
@@ -53,7 +53,7 @@ jobs:
           git config --global user.name 'CI PDF compiler'
           git config --global user.email '<>'
           git add Slides/BasicsMatricesVectors/main.pdf
-          git add Slides/2D_vectors_and_lines/main.pdf
+          git add Slides/VectorAlgebra2D/main.pdf
 
 
 
