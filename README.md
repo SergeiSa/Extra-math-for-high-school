@@ -1,18 +1,18 @@
 # How to use
 
-This repository contains regularly updated course materials. You can use lecture slides for self study (they are written as lecture notes). Lecture recordings from this and last year offerings are linked below. The links in the Self-study with Colab section are both for self-study and reviewing the practical sessions. Refer to the book and resourses suggestions at the bottom of the page.
-
+This repository contains regularly updated course materials. You can use lecture slides for self study (they are written as lecture notes). The links in the Self-study with Colab section are both for self-study and reviewing the practical sessions.
 # Lecture slides
 
 * Lecture 1. Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/BasicsMatricesVectors
 * Lecture 2. 2D algebra, dot product, plots, orthogonality - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorAlgebra2D
+* Lecture 3. 3D algebra, vector product, planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorAlgebra3D
 
 
 # Practice sessions with Colab
 
 * Seminar 1. Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/Vectors_Matrices_Norms_LinSystems_Determinants.ipynb
 * Seminar 2. 2D algebra, dot product, plots, orthogonality - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/2D_vectors_and_lines.ipynb
-
+* Seminar 3. 3D algebra, vector product, planes - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/3D_planes_and_lines.ipynb
 
 # For contributors
 
