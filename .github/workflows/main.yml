@@ -29,6 +29,11 @@ jobs:
           root_file: main.tex
           working_directory: Slides/VectorAlgebra2D/
 
+      - name: Compile LaTeX document VectorAlgebra3D
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/VectorAlgebra3D/
 
 
 
@@ -43,8 +48,12 @@ jobs:
         with:
           name: VectorAlgebra2D.pdf
           path: Slides/VectorAlgebra2D/main.pdf
-
-
+          
+      - name: Save VectorAlgebra3D artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: VectorAlgebra3D.pdf
+          path: Slides/VectorAlgebra3D/main.pdf
 
 
       - name: Update compiled PDFs in git repository
@@ -54,6 +63,7 @@ jobs:
           git config --global user.email '<>'
           git add Slides/BasicsMatricesVectors/main.pdf
           git add Slides/VectorAlgebra2D/main.pdf
+          git add Slides/VectorAlgebra3D/main.pdf
 
 
 
