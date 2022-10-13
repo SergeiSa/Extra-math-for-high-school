@@ -35,6 +35,13 @@ jobs:
           root_file: main.tex
           working_directory: Slides/VectorAlgebra3D/
 
+      - name: Compile LaTeX document ExampleProblemCube
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/ExampleProblemCube/
+
+
 
 
       - name: Save BasicsMatricesVectors artifact
@@ -54,6 +61,14 @@ jobs:
         with:
           name: VectorAlgebra3D.pdf
           path: Slides/VectorAlgebra3D/main.pdf
+          
+      - name: Save ExampleProblemCube artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: ExampleProblemCube.pdf
+          path: Slides/ExampleProblemCube/main.pdf
+
+
 
 
       - name: Update compiled PDFs in git repository
@@ -64,7 +79,7 @@ jobs:
           git add Slides/BasicsMatricesVectors/main.pdf
           git add Slides/VectorAlgebra2D/main.pdf
           git add Slides/VectorAlgebra3D/main.pdf
-
+          git add Slides/ExampleProblemCube/main.pdf
 
 
 
