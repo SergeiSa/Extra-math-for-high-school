@@ -1,0 +1,334 @@
+\documentclass{beamer}
+
+\input{settings.tex}
+
+
+\title{Algebra in 3D: examples}
+\subtitle{Math and modeling for high school}
+\author{by Sergei Savin}
+\centering
+\date{Fall 2022}
+
+
+
+\begin{document}
+\maketitle
+
+
+%\begin{frame}{Content}
+%
+%\begin{itemize}
+%\item Motivation
+%\item Ordinary differential equations
+%    \begin{itemize}
+%    \item 1st order
+%    \item n-th order
+%    \end{itemize}
+%\item Linear differential equations
+%    \begin{itemize}
+%    \item 1st order
+%    \item n-th order
+%    \end{itemize}
+%\item Changing n-th order ODE to a State-Space form
+%\item State-Space to ODE
+%\item Read more
+%\end{itemize}
+%
+%\end{frame}
+
+
+
+\begin{frame}{Problem statement}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Given a cube $ABCD A_1 B_1 C_1 D_1$ with a side length 9. Point $K \in BB_1$, with $||KB|| = 7$ (meaning the distance from $K$ to $B$ is 7). Plane $\alpha$ passes through $K$ and $C_1$, and is parallel to $BD_1$. $P$ is a point of intersection of $\alpha$ with $A_1 B_1$
+		
+		\bigskip
+		
+		\begin{itemize}
+			\item 	Prove that $||A_1 P|| / ||PB_1|| = 2.5$.
+			
+			\item Find angle between $\alpha$ and $B B_1 C_1$.
+		\end{itemize}
+	
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Computational way of looking at the problem}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Our approach here can be straight-forward: we compute everything that can be computed exactly. 
+		
+		\bigskip
+		
+		Later we can discard useless steps, but it can be counter-productive to start discarding them before we know how we will arrive at the solution.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Computational way of looking at the problem}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		%B--A
+		%C--D
+		
+		For example, assuming that $C_1 = [0, \ 0,  \ 0]$ (why? so $\alpha$ passes through the origin), and orienting the axes such that $D_1 = [9, \ 0,  \ 0]$, $B_1 = [0, \ 0,  \ 9]$, we get:
+		
+		\begin{align}
+		A_1 = [9, \ 0,  \ 9] \\
+		A = [9, \ 9,  \ 9] \\
+		B = [0, \ 9,  \ 9] \\
+		C = [0, \ 9,  \ 0] \\
+		D = [9, \ 9,  \ 0]
+		\end{align}
+	
+Do we need all these points? No. Is it trivial to find their coordinates? Yes. Is it easier to think about the problem when you know all their coordinates? Yes.	
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Computational way of looking at the problem}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Since  $K \in BB_1$ and $||KB|| = 7$, and $B = [0, \ 9,  \ 9]$, $B_1 = [0, \ 0,  \ 9]$, we can find coordinates of $K$:
+		
+		\begin{equation}
+			K =  [0, \ 2,  \ 9]
+		\end{equation}
+		
+		There are two ways to arrive there. 1) You know that $K$ is $7 / 9$ of the way between $B$ and $B_1$, so: $K = B + \frac{7}{9}(B_1-B) = \frac{2}{9}B + \frac{7}{9}B_1$. 
+		
+		\bigskip
+		
+		Or, 2) The direction from $B$ to $B_1$ is given as $\mathbf b = [0, \ -1,  \ 0]$, and we know that the distance is 7, so $K = B + 7\mathbf b$.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Computational way of looking at the problem}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Plane $\alpha$ passes through $K$ and $C_1$, and is parallel to $BD_1$. The fact that it passes through $K$ and $C_1$, it means that a vector from  $K$ to $C_1$ is tangent to the plane. So is a vector from $B$ to $D_1$. Let us find those two vectors:
+		
+		\begin{equation}
+			\bo{r}_{BD_1} = B-D_1 = [0, \ 9,  \ 9]-[9, \ 0,  \ 0] =  [-9, \ 9,  \ 9]
+		\end{equation}
+%
+	\begin{equation}
+	\bo{r}_{KC_1} = K-C_1 = [0, \ 2,  \ 9] - [0, \ 0,  \ 0] = [0, \ 2,  \ 9]
+	\end{equation}
+		
+		\bigskip
+		
+		We can find the norm to the plane by taking a cross product of $\bo{r}_{BD_1}$ and $\bo{r}_{KC_1}$:
+		
+\begin{equation}
+	\bo{n} = \bo{r}_{BD_1} \times \bo{r}_{KC_1} = \begin{bmatrix}
+		81-18 \\
+		0+81\\
+		-18-0
+	\end{bmatrix}
+=	
+	 \begin{bmatrix}
+	 	  63 \\
+	 	  81 \\
+	 	-18
+	 \end{bmatrix}
+\end{equation}		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Finding point P}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		$P$ is a point of intersection of $\alpha$ with $A_1 B_1$. Let us find a vector from $A_1$ to $B_1$:
+		%
+		\begin{equation}
+			\bo{r}_{A_1 B_1} = A_1 - B_1 = [9, \ 0,  \ 9] - [0, \ 0,  \ 9] = [9, \ 0,  \ 0]
+		\end{equation}
+	
+	Let us denote coordinates of $P$ as $\mathbf p$ and coordinates of $B_1$ as $\mathbf b_1$. We know that $\mathbf p^\top \mathbf n = 0$ and $\mathbf p = \lambda \bo{r}_{A_1 B_1} + \mathbf b_1$. Therefore:
+	
+		\begin{equation}
+	(\lambda \bo{r}_{A_1 B_1} + \mathbf b_1)^\top \mathbf n = 0
+		\end{equation}	 
+		\begin{equation}
+			\lambda = -\frac{ \mathbf b_1^\top \mathbf n}{\bo{r}_{A_1 B_1}^\top \mathbf n}
+		\end{equation}
+%		
+\begin{equation}
+	\mathbf b_1^\top \mathbf n = 0 + 0 + 9 \cdot 2 = -162
+\end{equation}		
+%
+\begin{equation}
+\bo{r}_{A_1 B_1}^\top \mathbf n = -9 \cdot 11 + 0 + 0 =567
+\end{equation}		
+%
+\begin{equation}
+	\lambda = -\frac{ -162 }{567} = 2/7
+\end{equation}
+
+	
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Task 1}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+We found that $\lambda = 2/7$ and $\mathbf p = \lambda \bo{r}_{A_1 B_1} + \mathbf b_1$. Then:
+
+\begin{equation}
+	\mathbf p =  2/7  [9, \ 0,  \ 0] +  [0, \ 0,  \ 9] = [18/7, \ 0,  \ 9] 
+\end{equation}
+		
+		\bigskip
+		
+		We can find $|| A_1 P ||$ and $|| B_1 P ||$; These vectors are $A_1 P = [45/7, \ 0,  \ 0] $ and $B_1 P = [18/7, \ 0,  \ 0] $. With that we know:
+		
+		\begin{align}
+			||A_1 P|| = 45/7 \\
+			||B_1 P|| = 18/7 \\
+			||A_1 P|| / ||B_1 P|| = 45 \ 18 = 5/2
+		\end{align}
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Task 2}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Find angle between $\alpha$ and $B B_1 C_1$. This is the same as angle between the normals to these planes. First we find the norm to the plane $B B_1 C_1$:
+		
+		
+\begin{align}
+	B - B_1 = [0, \ 9,  \ 0] \\
+	B_1 - C_1 = [0, \ 0,  \ 9]  \\
+	\bo{m} = (B - B_1) \times (B_1 - C_1) = [81, \ 0,  \ 0]
+\end{align}		
+		
+		With that we know normals to both $\alpha$ and $B B_1 C_1$, and can find the angle between them using dot product.
+		
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Task 2}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		We know that:
+		
+		\begin{equation}
+			\bo{m} \cdot \bo{n} = || \bo{n}|| \ || \bo{m}|| \text{cos}(\varphi),
+		\end{equation}
+	
+	where $\varphi$ is the angle we seek. We need to find $\bo{m} \cdot \bo{n}$, as well as $|| \bo{m}||$ and $|| \bo{n}||$:
+		
+		\begin{align}
+			\bo{m} \cdot \bo{n} = 63 \cdot 81 + 0 + 0 = 5103 \\
+			|| \bo{n}|| = \sqrt{10854} \\
+			|| \bo{m}|| = 81 \\
+			\text{cos}(\varphi) = \frac{\bo{m} \cdot \bo{n} }{|| \bo{n}|| \ || \bo{m}||} = 5103 / (81 \sqrt{10854}) \approx 0.6047 \\
+			\varphi = 52.79^{\circ}
+		\end{align}		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+
+
+
+\begin{frame}[fragile]{The code in Matlab for this problem is:}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		\begin{lstlisting}[language=Matlab]
+			dx = [9;0;0]; dy = [0;9;0]; dz = [0;0;9];
+			C1 = sym([0;0;0]);
+			D1 = C1 + dx; A1 = C1 + dx + dz; B1 = C1 + dz;
+			B = C1 + dy + dz;
+			
+			K = (2/9) * B + (7/9) * B1;
+			BD1 = B - D1;
+			KC1 = K - C1;
+			n = cross(BD1, KC1);
+			lambda = -dot(B1, n) / dot(dx, n);
+			P = lambda*dx + B1;
+			A1P = A1 - P;
+			B1P = B1 - P;
+			disp( norm(A1P) / norm(B1P) ) %task 1
+			
+			m = cross(dy, dz); 
+			cos_phi = dot(n, m) / (norm(n) * norm(m));
+			%task 2:
+			phi = round(double(acos(cos_phi))*180/pi, 3) 
+		\end{lstlisting}
+		
+		
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Homework}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Consider a cube $ABCD A_1 B_1 C_1 D_1$ with a side length 3. Point $S_1 \in DB_1$, with $||DS_1|| = 1$ (meaning the distance from $D$ to $S_1$ is 1). Point $S_2 \in AB_1$, with $||AS_2|| = 2$ (meaning the distance from $A$ to $S_2$ is 2). Plane $\alpha_1$ passes through $S_1$, $S_2$ and $D$. Plane $\alpha_2$ is orthogonal to $C_1S_1$ through $C$. Point $P$ is an intersection between the plane $\alpha_1$ and the line passing through points $D_1$, $B$.
+		
+		\bigskip
+		
+		\begin{itemize}
+			\item Find distance between $P$ and $A$.
+			\item Find angle between $\alpha_1$ and $\alpha_2$.
+			\item Find distance between $\alpha_1$ and all vertices of the cube.
+			\item Prove that $P$ lies on $B_1 S_1$.
+		\end{itemize}
+		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Thank you!}
+\centerline{Lecture slides are available via Moodle.}
+\bigskip
+\centerline{You can help improve these slides at:}
+\centerline{\mygit}
+\bigskip
+\centerline{Check Moodle for additional links, videos, textbook suggestions.}
+\bigskip
+
+\centerline{\textcolor{black}{\qrcode[height=1.6in]{https://github.com/SergeiSa/Extra-math-for-high-school}}}
+
+\end{frame}
+
+\end{document}
