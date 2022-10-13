@@ -6,6 +6,7 @@ This repository contains regularly updated course materials. You can use lecture
 * Lecture 1. Vectors, Matrices, Norms, Linear Systems, Determinants, linear independence - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/BasicsMatricesVectors
 * Lecture 2. 2D algebra, dot product, plots, orthogonality - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorAlgebra2D
 * Lecture 3. 3D algebra, vector product, planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorAlgebra3D
+* Lecture 4. Example problem - cube intersected by planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/ExampleProblemCube
 
 
 # Practice sessions with Colab
