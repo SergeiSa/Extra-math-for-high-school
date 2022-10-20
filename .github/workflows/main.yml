@@ -41,6 +41,12 @@ jobs:
           root_file: main.tex
           working_directory: Slides/ExampleProblemCube/
 
+      - name: Compile LaTeX document Derivatives
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/Derivatives/
+
 
 
 
@@ -67,6 +73,12 @@ jobs:
         with:
           name: ExampleProblemCube.pdf
           path: Slides/ExampleProblemCube/main.pdf
+          
+      - name: Save Derivatives artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: Derivatives.pdf
+          path: Slides/Derivatives/main.pdf
 
 
 
@@ -80,6 +92,7 @@ jobs:
           git add Slides/VectorAlgebra2D/main.pdf
           git add Slides/VectorAlgebra3D/main.pdf
           git add Slides/ExampleProblemCube/main.pdf
+          git add Slides/Derivatives/main.pdf
 
 
 
