@@ -16,6 +16,8 @@ This repository contains regularly updated course materials. You can use lecture
 * Seminar 2. 2D algebra, dot product, plots, orthogonality - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/2D_vectors_and_lines.ipynb
 * Seminar 3. 3D algebra, vector product, planes - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/3D_planes_and_lines.ipynb
 * Seminar 4. 
+* * Surfaces in MATLAB - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/MATLAB_examples/Surfaces 
+* * Cube problem - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/MATLAB_examples/CubeProblem
 * Seminar 5. Symbolic derivatives, normals and tangents to graphs - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/SymbolicMath.ipynb
 
 # For contributors
