@@ -47,6 +47,14 @@ jobs:
           root_file: main.tex
           working_directory: Slides/Derivatives/
 
+      - name: Compile LaTeX document DifferentialEquations
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/DifferentialEquations/
+
+
+
 
 
 
@@ -79,6 +87,12 @@ jobs:
         with:
           name: Derivatives.pdf
           path: Slides/Derivatives/main.pdf
+          
+      - name: Save DifferentialEquations artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: DifferentialEquations.pdf
+          path: Slides/DifferentialEquations/main.pdf
 
 
 
@@ -93,6 +107,7 @@ jobs:
           git add Slides/VectorAlgebra3D/main.pdf
           git add Slides/ExampleProblemCube/main.pdf
           git add Slides/Derivatives/main.pdf
+          git add Slides/DifferentialEquations/main.pdf
 
 
 
