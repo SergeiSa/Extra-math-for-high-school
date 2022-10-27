@@ -1,0 +1,172 @@
+\documentclass{beamer}
+
+\input{settings.tex}
+
+
+\title{Differential equations}
+\subtitle{Math and modeling for high school}
+\author{by Sergei Savin}
+\centering
+\date{Fall 2022}
+
+
+
+\begin{document}
+\maketitle
+
+
+\begin{frame}{Derivatives and predictions}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Consider a function $y = y(x)$, with a derivative $\frac{d}{dx} y = \dot y$. Assume that $y(0) = 10$ and $\dot y (0) = 1$. Can we find (approximately) what $y(\Delta x)$ is, if $\Delta x$ is very small?
+		
+		\bigskip
+		
+		We can reasonably say that $y(\Delta x) \approx y(0) + \dot y (0) \Delta x$.
+		
+		% TODO: \usepackage{graphicx} required
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{tangent_to_curve2}
+			\label{fig:tangenttocurve2}
+		\end{figure}
+		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Derivatives and predictions}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		More generally:
+		
+		 $$y(x + \Delta x) \approx y(x) + \dot y (x) \Delta x$$ 
+	
+		If this approximation is accurate enough, it appears we could draw a graph of a function while knowing only its slopes (derivatives) $\dot y = \dot y (x)$.
+		
+		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Derivatives and equations}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Consider a ``usual" function $y = y(x)$. For example, $y(x) = x^3 - 1$. We define it by identifying how $y$ depends on $x$. In other words - we explain which $y$ we expect for a given $x$.
+		
+		\bigskip
+		
+		But what if instead we identify what rate of change (slope) of the function we expect for a given $x$? Can we define a graph as $\dot y =\dot y(x)$?
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Derivatives and equations}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Let us look at an example. Consider a function $\dot y =2x$.
+		
+		\bigskip
+		
+		We remember that a derivative of $x^2$ is $2x$. So, is graph $\dot y =2x$ equivalent to $y =x^2$?
+		
+		\bigskip
+		
+		Remember that $\frac{d}{dx} (x^2 - 1) = 2x$, and $\frac{d}{dx} (x^2 + 20) = 2x$, and $\frac{d}{dx} (x^2 + 3) = 2x$. 
+		
+		\begin{block}{Differential equation}
+		So, $\dot y =2x$ is not equivalent to any one of those graphs, it actually describes a family of graphs $y =x^2 + c$, $c = const$. We call it \emph{differential equation}.
+		\end{block}
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Initial conditions}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Given differential equation $\dot y =2x$ and knowing what the function is equal to at a single point (if $x = 0$, then $y = 7$ - as an example) is sufficient to recover the function; not a family of graphs, but one concrete graph.
+		
+		\bigskip
+		
+		Let us test it. We know that $y =x^2 + c$, and also that if $x = 0$, then $y = 7$. So, $7 =0^2 + c$, hence $c = 7$. The graph we recovered is:
+		
+		\begin{equation}
+			y =x^2 + 7
+		\end{equation}
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Initial conditions}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		If we know what $y$ is when $x = 0$, this is called \emph{initial conditions}. Knowing a differential equation and initial conditions we can \emph{solve} it - which means we can recover a single graph it represents for those initial conditions.
+		
+		\bigskip
+		
+		This makes sense if we think back to our approximation $y(x + \Delta x) \approx y(x) + \dot y (x) \Delta x$. We can use it to continue a graph from a certain point, but not to draw it from scratch. It is very explicit at the point $x = 0$:
+		
+		$$y(\Delta x) \approx y(0) + \dot y (0) \Delta x$$
+		
+		If we know $y(0)$ and how to find $\dot y$, we can approximate the whole graph. 
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Differential equations}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Some differential equations naturally make sense:
+		
+		$$\dot y = x$$
+		$$\dot y = 4x^3 + 1$$
+		$$\dot y = -1$$
+		
+		But they don't need to be simple. For example, we can write the following differential equation:
+		
+		$$\dot y = -y$$.
+		
+		And indeed, if we know what $y$ is when $x = 0$, then we can approximate its solution.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Thank you!}
+\centerline{Lecture slides are available via Moodle.}
+\bigskip
+\centerline{You can help improve these slides at:}
+\centerline{\mygit}
+\bigskip
+\centerline{Check Moodle for additional links, videos, textbook suggestions.}
+\bigskip
+
+\centerline{\textcolor{black}{\qrcode[height=1.6in]{https://github.com/SergeiSa/Extra-math-for-high-school}}}
+
+\end{frame}
+
+\end{document}
