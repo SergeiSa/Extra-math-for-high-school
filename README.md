@@ -8,6 +8,7 @@ This repository contains regularly updated course materials. You can use lecture
 * Lecture 3. 3D algebra, vector product, planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorAlgebra3D
 * Lecture 4. Example problem - cube intersected by planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/ExampleProblemCube
 * Lecture 5. Derivatives, tangents and normals to graphs - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/Derivatives
+* Lecture 6. Differential equations - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/DifferentialEquations
 
 
 # Practice sessions with Colab
