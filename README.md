@@ -20,6 +20,7 @@ This repository contains regularly updated course materials. You can use lecture
 * * Surfaces in MATLAB - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/MATLAB_examples/Surfaces 
 * * Cube problem - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/MATLAB_examples/CubeProblem
 * Seminar 5. Symbolic derivatives, normals and tangents to graphs - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/SymbolicMath.ipynb
+* Seminar 6. - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/Differential_equations.ipynb
 
 # For contributors
 
