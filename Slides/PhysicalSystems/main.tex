@@ -1,0 +1,329 @@
+\documentclass{beamer}
+
+\input{settings.tex}
+
+
+\title{Physical systems}
+\subtitle{Math and modeling for high school}
+\author{by Sergei Savin}
+\centering
+\date{Fall 2022}
+
+
+
+\begin{document}
+\maketitle
+
+
+\begin{frame}{Free fall}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		A unit mass is flying up with speed to $v$, such that $v(0) = 9.81$. Assuming that gravitational acceleration is $g = 9.81$, and initial position of the unit mass is $s(0) = 0$, when will it hit the ground?
+		
+		\bigskip
+		
+		Remembering Newton's law we get:
+		
+		$$ma = - mg$$
+		
+		We know \emph{acceleration is the derivative of velocity} and \emph{velocity is the derivative of position}:
+		
+		\begin{align}
+			\dot v = a \\
+			\dot s = v
+		\end{align}
+		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Free fall}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		For our problem we have:
+		%
+		\begin{align}
+			\dot v = -g \\
+			\dot s = v
+		\end{align}
+		
+		From that, we can find that $v(t) = -g t + C_1$, and since $v(0) = 9.81$, we get:
+		%
+		\begin{align}
+	v(0) = 0+ C_1 = 9.81
+		\end{align}		
+	
+	Finally we get: $v(t) = - 9.81 t +  9.81$. From that we get:
+	%
+		\begin{align}
+			\dot s = - 9.81 t+  9.81 \\
+			s(t) = -\frac{1}{2} 9.81 t^2 +  9.81t + C_2 
+		\end{align}			
+	
+	From $s(0) = 0$ we get $ C_2 = 0$, so:
+	%
+		\begin{align}
+	s(t) = -\frac{1}{2} 9.81 t^2 +  9.81t 
+		\end{align}					
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Free fall}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Given $s(t) = -\frac{1}{2} 9.81 t^2 +  9.81t $, we can try to find when the unit mass will hit the ground, i.e. when $s(t) = 0$:
+		
+		\begin{align}
+	-\frac{1}{2} 9.81 t^2 +  9.81t = 0 \\
+	t_1 = 0\\
+	t_2 = 2
+		\end{align}					
+	
+	And that is the answer!
+	
+	\bigskip
+	
+	Let us remember that this analysis will work just as well with numerical solution for the differential equation. Meaning, we are not limited to simple tasks with simple solution here.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Sinking}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Consider a unit mass sinking in viscous liquid. The viscosity force is modeled as $f_v = \mu v = 4 v$. The buoyancy force is $f_b = 1$. The mass of the unit is $m = 0.5$, the gravitational acceleration $g = 10$. What is the maximum velocity that the unit mass can achieve?
+		
+		\bigskip
+		
+		We can model the system as
+		
+		\begin{align}
+			m a = f_b - mg - \mu v
+		\end{align}			
+	
+			As before, we know that $\dot v = a$, so $\dot v =  f_b - mg - \mu v$. When the unit mass achieves its maximal velocity, it means that $\dot v = 0$:
+			
+		\begin{align}
+			f_b - mg - \mu v_{max} = 0 \\
+			v_{max} = \frac{f_b - mg}{\mu} =  \frac{1 - 5}{4} = -1
+		\end{align}				
+		
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Sinking}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Notice that, given $\dot v =  f_b - mg - \mu v$ we can also answer questions such as
+		
+		\begin{itemize}
+			\item When will $v > 0.9 v_{max}$?
+			
+			\item How far will the unit mass sink from point $t = 1$ to the point $t = 3$, given zero initial velocity?
+		\end{itemize}
+	
+	\bigskip
+				
+				These questions can be easily answered if you solve the equation numerically.
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Flying}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Consider a body with mass $m = 2$, flying horizontally with propulsive force $f = 10$ from point $t = 0$ until point $t = 2$. After $t = 2$, the force ceases. Initial conditions $v(0) = 1$, $s(0) = 0$. When will the body pass 100 meter mark?
+		
+		\bigskip
+		
+		We can model the system as:
+		
+		\begin{align}
+			\begin{cases}
+				2 a = 10 \\
+				2 a = 0
+			\end{cases}
+		\end{align}	
+	
+	We know that $\dot v = a$, so $2 \dot v = 10$, so:
+	
+		\begin{align}
+				2 \dot v = 10 \\
+				v = 5 t + C_1
+		\end{align}		
+	
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Flying}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		
+		Since $v(0) = 0 + C_1 = 1$, we get:
+		
+		\begin{align}
+			v(t) = \dot s = 5 t + 1 \\
+			s = 2.5 t^2 + t + C_2 
+		\end{align}		
+		
+		Since $s(0) = 0$, so $C_2 = 0$:
+		
+		\begin{align}
+			s = 2.5 t^2 + t 
+		\end{align}			
+		
+		What is the position when $t = 2$:
+		
+		\begin{align}
+	s(2) = 10 + 2 = 12 \\
+	v(2) = 10 + 1 = 11
+		\end{align}			
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Flying}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		
+		Now we can go back and consider what happens after $t = 2$:
+		
+		\begin{align}
+	\dot v = 0 \\
+	v = C_3\\
+	v(2) = C_3 = 11
+		\end{align}				
+		
+		And finally, the position:
+		
+				\begin{align}
+			\dot s = 11 \\
+			s = 11 t + C_4\\
+			s(2) = 22 + C_4 = 12 \\
+			C_4 = -10 \\
+			s(t) = 11 t - 10
+		\end{align}		
+	
+	So, when will $s(t) = 11 t - 10  = 100$? The answer is $t = 110 / 11 = 10$		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+
+\begin{frame}{Sliding down a slope}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Let us consider a body with mass $m = 1$, sliding down a slope with angle $\alpha = \pi / 4$ and friction coefficient $\mu = 0.5$ along first $\sqrt{2}$ meters, and 0.75 later. We use parameters: gravitational acceleration $g = 10$, $x(0) = 0$, $v(0) = 0$.
+		
+		\bigskip
+		
+		We can find acceleration as:
+		
+		\begin{align}
+			m a = m g \sin (\alpha) - \mu N
+		\end{align}				
+	
+	where $N$ is normal reaction force. We can find the reaction force as $N = mg \cos (\alpha)$. So we get:
+	
+	\begin{align}
+		m a = m g \sin (\alpha) - \mu mg \cos (\alpha) \\
+		a = g (\sin (\alpha) - \mu \cos (\alpha)) = 
+		\begin{cases}
+			\frac{10}{4} \sqrt{2} \ \  \text{if}  \ \ s \leq \sqrt{2} \\
+			\frac{10}{8} \sqrt{2} \ \ \text{if}  \ \ s > \sqrt{2}
+		\end{cases}
+	\end{align}		
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Sliding down a slope}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Considering that derivative of the velocity is acceleration, we get:
+		
+		$$
+			\dot v = 
+			\begin{cases}
+				\frac{10}{4} \sqrt{2} \ \  \text{if}  \ \ s \leq \sqrt{2} \\
+				\frac{10}{8} \sqrt{2} \ \ \text{if}  \ \ s > \sqrt{2}
+			\end{cases}
+		$$
+		
+		The first segment is $\dot v = \frac{10}{4} \sqrt{2}$ and $v = \frac{10}{4} \sqrt{2} t + C_1$. We know that $v(0) = 0$, so $C_1 = 0$. Thus:
+		
+\begin{align}
+\dot s = \frac{10}{4} \sqrt{2} t \\
+s =  \frac{10}{8} \sqrt{2} t ^2 + C_2 \\
+s(0) = 0 \\
+C_2 = 0 \\
+s(t) =  \frac{10}{8} \sqrt{2} t ^2 
+\end{align}			
+		
+	\end{flushleft}
+\end{frame}
+
+
+
+\begin{frame}{Sliding down a slope}
+	% \framesubtitle{Part 1}
+	\begin{flushleft}
+		
+		Given $s(t) =  \frac{10}{8} \sqrt{2} t ^2 $, what is the time when $s = \sqrt{2}$?
+		
+\begin{align}
+	 \sqrt{2} =  \frac{10}{8} \sqrt{2} t ^2 \\
+	 t_1 = \sqrt{0.8} 
+\end{align}			
+
+With that, we can consider equation $\dot v = \frac{10}{8} \sqrt{2}$ with initial conditions $v(\sqrt{0.8}) =  \frac{10}{4} \sqrt{1.8}$ and $s(\sqrt{0.8}) = \sqrt{2}$.
+		
+	\end{flushleft}
+\end{frame}
+
+
+\begin{frame}{Thank you!}
+\centerline{Lecture slides are available via Moodle.}
+\bigskip
+\centerline{You can help improve these slides at:}
+\centerline{\mygit}
+\bigskip
+\centerline{Check Moodle for additional links, videos, textbook suggestions.}
+\bigskip
+
+\centerline{\textcolor{black}{\qrcode[height=1.6in]{https://github.com/SergeiSa/Extra-math-for-high-school}}}
+
+\end{frame}
+
+\end{document}
