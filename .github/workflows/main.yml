@@ -53,6 +53,12 @@ jobs:
           root_file: main.tex
           working_directory: Slides/DifferentialEquations/
 
+      - name: Compile LaTeX document VectorODE
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/VectorODE/
+
 
 
 
@@ -93,6 +99,12 @@ jobs:
         with:
           name: DifferentialEquations.pdf
           path: Slides/DifferentialEquations/main.pdf
+          
+      - name: Save VectorODE artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: VectorODE.pdf
+          path: Slides/VectorODE/main.pdf
 
 
 
@@ -108,6 +120,7 @@ jobs:
           git add Slides/ExampleProblemCube/main.pdf
           git add Slides/Derivatives/main.pdf
           git add Slides/DifferentialEquations/main.pdf
+          git add Slides/VectorODE/main.pdf
 
 
 
