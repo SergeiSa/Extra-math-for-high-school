@@ -59,6 +59,12 @@ jobs:
           root_file: main.tex
           working_directory: Slides/VectorODE/
 
+      - name: Compile LaTeX document Verification
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/Verification/
+
 
 
 
@@ -69,42 +75,48 @@ jobs:
         with:
           name: BasicsMatricesVectors.pdf
           path: Slides/BasicsMatricesVectors/main.pdf
-          
+
       - name: Save VectorAlgebra2D artifact
         uses: actions/upload-artifact@v1
         with:
           name: VectorAlgebra2D.pdf
           path: Slides/VectorAlgebra2D/main.pdf
-          
+
       - name: Save VectorAlgebra3D artifact
         uses: actions/upload-artifact@v1
         with:
           name: VectorAlgebra3D.pdf
           path: Slides/VectorAlgebra3D/main.pdf
-          
+
       - name: Save ExampleProblemCube artifact
         uses: actions/upload-artifact@v1
         with:
           name: ExampleProblemCube.pdf
           path: Slides/ExampleProblemCube/main.pdf
-          
+
       - name: Save Derivatives artifact
         uses: actions/upload-artifact@v1
         with:
           name: Derivatives.pdf
           path: Slides/Derivatives/main.pdf
-          
+
       - name: Save DifferentialEquations artifact
         uses: actions/upload-artifact@v1
         with:
           name: DifferentialEquations.pdf
           path: Slides/DifferentialEquations/main.pdf
-          
+
       - name: Save VectorODE artifact
         uses: actions/upload-artifact@v1
         with:
           name: VectorODE.pdf
           path: Slides/VectorODE/main.pdf
+
+      - name: Save Verification artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: Verification.pdf
+          path: Slides/Verification/main.pdf
 
 
 
@@ -121,6 +133,7 @@ jobs:
           git add Slides/Derivatives/main.pdf
           git add Slides/DifferentialEquations/main.pdf
           git add Slides/VectorODE/main.pdf
+          git add Slides/Verification/main.pdf
 
 
 
