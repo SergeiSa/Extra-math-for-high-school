@@ -1,4 +1,4 @@
-# How to use
+# How to use :):):):):)
 
 This repository contains regularly updated course materials. You can use lecture slides for self study (they are written as lecture notes). The links in the Self-study with Colab section are both for self-study and reviewing the practical sessions.
 # Lecture slides
