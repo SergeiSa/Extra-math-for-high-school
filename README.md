@@ -9,6 +9,7 @@ This repository contains regularly updated course materials. You can use lecture
 * Lecture 4. Example problem - cube intersected by planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/ExampleProblemCube
 * Lecture 5. Derivatives, tangents and normals to graphs - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/Derivatives
 * Lecture 6. Differential equations - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/DifferentialEquations
+* Lecture 7. Vector ODEs, Satellite orbit https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorODE
 
 
 # Practice sessions with Colab
