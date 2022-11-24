@@ -9,8 +9,9 @@ This repository contains regularly updated course materials. You can use lecture
 * Lecture 4. Example problem - cube intersected by planes - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/ExampleProblemCube
 * Lecture 5. Derivatives, tangents and normals to graphs - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/Derivatives
 * Lecture 6. Differential equations - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/DifferentialEquations
-* Lecture 7. Vector ODEs, Satellite orbit https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorODE
-
+* Lecture 7. Vector ODEs, Satellite orbit - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/VectorODE
+* Lecture 8. Verification - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/Slides/Verification
+* Lecture 9. git, github
 
 # Practice sessions with Colab
 
@@ -22,6 +23,8 @@ This repository contains regularly updated course materials. You can use lecture
 * * Cube problem - https://github.com/SergeiSa/Extra-math-for-high-school/tree/main/MATLAB_examples/CubeProblem
 * Seminar 5. Symbolic derivatives, normals and tangents to graphs - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/SymbolicMath.ipynb
 * Seminar 6. Solving differential equations, odeint - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/ColabNotebooks/Differential_equations.ipynb
+* Seminar 7. Orbits - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/MATLAB_examples/Satellite/class_orbit_inclination.m
+* Seminar 8. Energy, verification - https://github.com/SergeiSa/Extra-math-for-high-school/blob/main/MATLAB_examples/Satellite/class_energy.m
 
 # For contributors
 
