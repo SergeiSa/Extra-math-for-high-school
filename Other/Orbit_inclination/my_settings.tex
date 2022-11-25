@@ -1,0 +1,80 @@
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}  
+\usepackage{mathrsfs}
+
+
+\usepackage{xcolor}
+
+% \usepackage{lscape}
+
+\newcommand{\bo}[1] {\mathbf{#1}}
+\newcommand{\R} {\mathbb{R}}
+\newcommand{\norm}[1] {\left|\left|{#1}\right|\right|}
+\newcommand{\T}{^\top}
+
+% \newcommand{\col}[1] {\text{col}\left(#1\right)}
+% \newcommand{\nulls}[1] {\text{null}\left(#1\right)}
+
+\newcommand{\jac}[2] {\frac{\partial \bo{#1}}{\partial \bo{#2}}}
+
+% \newcommand{\cos}[1] {\text{cos}\left(#1\right)}
+% \newcommand{\sin}[1] {\text{cos}\left(#1\right)}
+
+\newtheorem{assumption}{Assumption}
+\newtheorem{theorem}{Theorem}
+
+
+\definecolor{mypink}{RGB}{255, 30, 80}
+\definecolor{mydarkred}{RGB}{160, 30, 30}
+\definecolor{mylightred}{RGB}{255, 150, 150}
+\definecolor{mylightgreyred}{RGB}{250, 240, 240}
+\definecolor{myred}{RGB}{200, 110, 110}
+\definecolor{myblackred}{RGB}{120, 40, 40}
+
+\definecolor{myblue}{RGB}{240, 240, 255}
+\definecolor{mydarkblue}{RGB}{60, 160, 255}
+\definecolor{myblackblue}{RGB}{40, 40, 120}
+
+\definecolor{mylime}{RGB}{200, 240, 240}
+\definecolor{mygreen}{RGB}{0, 200, 0}
+\definecolor{mylightgreen}{RGB}{205, 255, 200}
+\definecolor{mylightgreygreen}{RGB}{240, 250, 240}
+\definecolor{mydarkgreen}{RGB}{0, 200, 0}
+\definecolor{myblackgreen}{RGB}{0, 100, 0}
+
+\definecolor{mygray}{gray}{0.8}
+% \definecolor{mydarkgray}{gray}{0.4}
+\definecolor{mydarkgray}{RGB}{80, 80, 160}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usetikzlibrary{shadings,shadows}
+
+\newenvironment{myexampleblock}[1]{%
+    \tcolorbox[beamer,%
+    noparskip,breakable,
+    colback=mylightgreygreen,colframe=myblackgreen,%
+    colbacklower=mylime!75!mylightgreygreen,%
+    title=#1]}%
+    {\endtcolorbox}
+
+\newenvironment{myalertblock}[1]{%
+    \tcolorbox[beamer,%
+    noparskip,breakable,
+    colback=mylightgreyred,colframe=myblackred,%
+    colbacklower=myred!75!mylightgreyred,%
+    title=#1]}%
+    {\endtcolorbox}
+
+\newenvironment{myblock}[1]{%
+    \tcolorbox[beamer,%
+    noparskip,breakable,
+    colback=myblue,colframe=myblackblue,%
+    colbacklower=myblackblue!75!myblue,%
+    title=#1]}%
+    {\endtcolorbox}

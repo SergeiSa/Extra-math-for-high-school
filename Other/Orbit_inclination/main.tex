@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage{blindtext}
+\usepackage[a4paper, total={7.5in, 10in}]{geometry}
+
+\usepackage[utf8]{inputenc}
+
+\include{my_settings}
+
+\title{MyMathTemplate}
+% \author{sergey89mtkgtu }
+% \date{May 2022}
+
+\begin{document}
+% \maketitle
+
+\section{Background}
+
+There are 4 equations that govern this case:
+
+1. Current position of the satellite is orthogonal to its orbit axis:
+
+$$\bo{n}\T \bo{r} = 0$$
+
+Second, its current velocity $\tau$ is orthogonal to both and:
+
+$$\tau = \bo{n} \times \bo{r}$$
+
+Third, the angle between the north pole axis and the orbit axis is $\varphi$:
+
+$$\bo{n}\T \bo{z} = \cos(\varphi)$$
+
+And finally, $||\bo{n}|| = 1$.
+
+\section{Solution}
+
+If $\bo{n} = [x_n, \ y_n, \ z_n]$, then $\bo{n}\T \bo{z} = \cos(\varphi)$ becomes:
+
+$$z_n = \cos(\varphi)$$
+
+If $\bo{r} = [x_r, \ y_r, \ z_r]$, then $\bo{n}\T \bo{r} = 0$ is equivalent to 
+
+$$x_r x_n + y_r y_n = -z_r \cos(\varphi)$$
+
+from which we get $x_n$:
+
+$$x_n = - y_r/x_r y_n -z_r/x_r \cos(\varphi)$$
+
+denoting $a = - y_r/x_r$ and $b = -z_r/x_r \cos(\varphi)$, we get:
+
+$$ x_n = a y_n + b$$
+
+Finally, the $||\bo{n}|| = 1$ gives us:
+
+$$ (a y_n + b)^2 + y_n^2 + \cos^2(\varphi) = 1$$
+
+$$ (a^2 + 1)y_n^2 +2ab y_n + b^2 = \sin^2(\varphi)$$
+
+
+
+\end{document}
