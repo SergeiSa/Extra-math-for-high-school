@@ -65,6 +65,12 @@ jobs:
           root_file: main.tex
           working_directory: Slides/Verification/
 
+      - name: Compile LaTeX document PhysicalSystems
+        uses: xu-cheng/latex-action@master
+        with:
+          root_file: main.tex
+          working_directory: Slides/PhysicalSystems/
+
 
 
 
@@ -118,6 +124,12 @@ jobs:
           name: Verification.pdf
           path: Slides/Verification/main.pdf
 
+      - name: Save PhysicalSystems artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: PhysicalSystems.pdf
+          path: Slides/PhysicalSystems/main.pdf
+
 
 
 
@@ -134,6 +146,7 @@ jobs:
           git add Slides/DifferentialEquations/main.pdf
           git add Slides/VectorODE/main.pdf
           git add Slides/Verification/main.pdf
+          git add Slides/PhysicalSystems/main.pdf
 
 
 
